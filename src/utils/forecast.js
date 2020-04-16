@@ -8,6 +8,8 @@ const forecast=(latitude,longitude,callback)=>{
             callback('Please input a valid co-ordinate',undefined);
         }else{
             callback(undefined,{
+                currenttime:body.location.localtime,
+                humidity:body.current.humidity,
                 descriptions:body.current.weather_descriptions[0],
                 temperature:+body.current.temperature,
                 feelslike:body.current.feelslike
